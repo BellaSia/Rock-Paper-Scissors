@@ -1,6 +1,6 @@
 const game = () => {
-    let pScore = 0;
-    let cScore = 0;
+    let player = 0;
+    let computer = 0;
   
     // Start the Game
     const startGame = () => {
@@ -52,8 +52,8 @@ const game = () => {
     const updateScore = () => {
       const playerScore = document.querySelector(".player-score p");
       const computerScore = document.querySelector(".computer-score p");
-      playerScore.textContent = pScore;
-      computerScore.textContent = cScore;
+      playerScore.textContent = player;
+      computerScore.textContent = computer;
     };
   
     const compareHands = (playerChoice, computerChoice) => {
@@ -83,13 +83,13 @@ computer_final_score = document.getElementById("co-score").textContent;
       if (playerChoice === "rock") {
         if (computerChoice === "scissors") {
           winner.textContent = "Player Win This Round!!";
-          pScore++;
+          player++;
           updateScore();
           return;
  
         } else {
           winner.textContent = "Computer Win This Round!!";
-          cScore++;
+          computer++;
           updateScore();
           return;
         }
@@ -99,12 +99,12 @@ computer_final_score = document.getElementById("co-score").textContent;
       if (playerChoice === "paper") {
         if (computerChoice === "scissors") {
           winner.textContent = "Computer Win This Round!!";
-          cScore++;
+          computer++;
           updateScore();
           return;
         } else {
           winner.textContent = "Player Win This Round!!";
-          pScore++;
+          player++;
           updateScore();
           return;
         }
@@ -113,12 +113,12 @@ computer_final_score = document.getElementById("co-score").textContent;
       if (playerChoice === "scissors") {
         if (computerChoice === "rock") {
           winner.textContent = "Computer Win This Round!!";
-          cScore++;
+          computer++;
           updateScore();
           return;
         } else {
           winner.textContent = "Player Win This Round!!";
-          pScore++;
+          player++;
           updateScore();
           return;
         }
